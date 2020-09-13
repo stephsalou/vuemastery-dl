@@ -30,7 +30,7 @@ async function startDownloadByID(vID, quality, appID) {
 
         if (videoURL !== null) {
             console.log(courseTitle + ', Downloading...');
-            await downloadFile(videoURL, courseTitle + '.mp4').then(function gotData(data) {
+            await downloadFile(videoURL, courseTitle.replaceAll('/','-') + '.mp4').then(function gotData(data) {
                 console.log(courseTitle + ', Download Complete.');
             }, reason => {
                 console.log('Error, ' + reason);
