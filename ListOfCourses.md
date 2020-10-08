@@ -1,24 +1,24 @@
-intro-to-vue-js/vue-instance
+[intro-to-vue-js/vue-instance](https://player.vimeo.com/video/258707456?autoplay=1&app_id=122963)
 
-intro-to-vue-js/attribute-binding
+[intro-to-vue-js/attribute-binding](https://player.vimeo.com/video/258874670?autoplay=1&app_id=122963)
 
-intro-to-vue-js/conditional-rendering
+[intro-to-vue-js/conditional-rendering](https://player.vimeo.com/video/300867455?autoplay=1&app_id=122963)
 
-intro-to-vue-js/list-rendering
+[intro-to-vue-js/list-rendering](https://player.vimeo.com/video/258889657?autoplay=1&app_id=122963)
 
-intro-to-vue-js/event-handling
+[intro-to-vue-js/event-handling](https://player.vimeo.com/video/259211539?autoplay=1&app_id=122963)
 
-intro-to-vue-js/class-&-style-binding
+[intro-to-vue-js/class-&-style-binding](https://player.vimeo.com/video/259233921?autoplay=1&app_id=122963)
 
-intro-to-vue-js/vue-computed-properties
+[intro-to-vue-js/vue-computed-properties](https://player.vimeo.com/video/259937361?autoplay=1&app_id=122963)
 
-intro-to-vue-js/components
+[intro-to-vue-js/components](https://player.vimeo.com/video/263051367?autoplay=1&app_id=122963)
 
-intro-to-vue-js/communicating-events
+[intro-to-vue-js/communicating-events](https://player.vimeo.com/video/263911367?autoplay=1&app_id=122963)
 
-intro-to-vue-js/forms
+[intro-to-vue-js/forms](https://player.vimeo.com/video/264692706?autoplay=1&app_id=122963)
 
-intro-to-vue-js/tabs
+[intro-to-vue-js/tabs](https://player.vimeo.com/video/267299472?autoplay=1&app_id=122963)
 
 advanced-components/the-introduction
 
