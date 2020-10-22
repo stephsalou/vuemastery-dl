@@ -22,3 +22,4 @@ Videos not yet completely added:
 
 [Build a Gmail Clone with Vue 3](https://www.vuemastery.com/courses/build-a-gmail-clone-with-vue3/tour-the-project)
 
+[Component Design Patterns, Lessons > 3](https://www.vuemastery.com/courses/component-design-patterns)
