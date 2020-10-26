@@ -25,7 +25,7 @@ async function startDownloadByID(index, vID, quality, appID) {
     var courseTitle = pageData.title || vID;
     var subtitleUrl = "https://player.vimeo.com" + pageData.subtitle;
     if (pageData.subtitle !== null) {
-        await downloadFile(subtitleUrl, courseTitle + '.vtt').then(function gotData(data) {
+        await downloadFile(subtitleUrl, courseTitle.replace(/[^\w\s]/gi, '-') + '.vtt' ).then(function gotData(data) {
             console.log(courseTitle + ', Download Complete.');
         }, reason => {
             console.log('Error, ' + reason);
