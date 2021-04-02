@@ -25,3 +25,5 @@ Videos not yet completely added:
 [Component Design Patterns, Lessons > 3](https://www.vuemastery.com/courses/component-design-patterns)
 
 [Vue3 Forms](https://www.vuemastery.com/courses/vue3-forms)
+
+[unit-testing directory the video 6 "Stubbing Child Components" is missing.](https://github.com/mahmoud-eskandari/vuemastery-dl/issues/44)
