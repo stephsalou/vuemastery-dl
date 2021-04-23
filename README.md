@@ -1,10 +1,23 @@
 # vuemastery-dl
-Vuemastery video downloader
+VueMastery video downloader
 
-## Download an entire lesson
+## Download an entire course:
+### Using nodejs script
 * first `cd data/ANY_DIRRECTORY` like `cd data/advanced-components`
 * download a directory with `node ../../mirror.js`
 
+### Using python script
+* first `cd` to the direcoty of the course you want: `cd data/ANY_DIRRECTORY` like `cd data/advanced-components`
+* download entire course with `python ../../course-downloader.py`
+
+you can use this options:
+* `-q` for setting video quality: `-q 1080`
+    if the given quality was unavailable, the highest available quality will be used  
+* `-s` for downloading subtitles: `-s`
+* `-l` for subtitles language: `-l en`
+
+as rate limit policy applied to subtitle files, downloading a subtitle may fail. in this situation,
+the subtitle file will contain the subtitle like.  
 
 ## Finding video links (for contributers)
 * Open a lesson on the browser
@@ -16,16 +29,9 @@ Vuemastery video downloader
 # PR
 Please put new video links to the data folder to help others, If you still have access to the videos
 
-Videos not yet completely added:
+## Videos not yet completely added:
 
-[From Vue 2 to Vue 3](https://www.vuemastery.com/courses/from-vue2-to-vue3/from-vue-2-to-vue-3)
-
-[Build a Gmail Clone with Vue 3](https://www.vuemastery.com/courses/build-a-gmail-clone-with-vue3/tour-the-project)
-
-[Component Design Patterns, Lessons > 3](https://www.vuemastery.com/courses/component-design-patterns)
-
-[Vue3 Forms](https://www.vuemastery.com/courses/vue3-forms)
-
-[unit-testing directory the video 6 "Stubbing Child Components" is missing.](https://github.com/mahmoud-eskandari/vuemastery-dl/issues/44)
-
-vue3-typescript 9 and 10 Lesson Missing 
+* [From Vue 2 to Vue 3](https://www.vuemastery.com/courses/from-vue2-to-vue3/from-vue-2-to-vue-3)
+* [Build a Gmail Clone with Vue 3](https://www.vuemastery.com/courses/build-a-gmail-clone-with-vue3/tour-the-project)
+* [Vue3 Forms](https://www.vuemastery.com/courses/vue3-forms)
+* [Lesson 10 and 11 of **Touring Vue Router**](https://www.vuemastery.com/courses/touring-vue-router/)
