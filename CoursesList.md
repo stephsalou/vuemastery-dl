@@ -86,10 +86,6 @@
 * [View on VueMastery.com](https://vuemastery.com/courses/component-design-Patterns)
 * [Readme](./data/component-design-Patterns/Readme.md)
 
-# Vue 3 Deep Dive With Evan You
-* [View on VueMastery.com](https://vuemastery.com/courses/vue-3-deep-dive-with-evan-you)
-* [Readme](./data/vue-3-deep-dive-with-evan-you/Readme.md)
-
 # Build A Gmail Clone With Vue3
 * [View on VueMastery.com](https://vuemastery.com/courses/build-a-gmail-clone-with-vue3)
 * [Readme](./data/build-a-gmail-clone-with-vue3/Readme.md)

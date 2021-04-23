@@ -41,11 +41,15 @@ def get_video_info(url, quality=1080, language='en'):
 	if not 'video' in result:
 		result['video'] = largest_quality_link
 
-	for item in player_config['request']['text_tracks']:
-		if item['lang'] == language:
-			result['subtitle'] = 'https://player.vimeo.com' + item['url']
+	try:
+		for item in player_config['request']['text_tracks']:
+			if item['lang'] == language:
+				result['subtitle'] = 'https://player.vimeo.com' + item['url']
+	except:
+		result['subtitle'] = ''
 
 	result['title'] = player_config['video']['title']
+	result['filename'] = result['title'].replace('/', '-')
 
 	result['video-id'], result['application-id'] = video_link_regex.findall(url)[0]
 	return result
@@ -55,7 +59,7 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 	if os.path.isfile('data.txt'):
 		with open('data.txt') as link_file:
-			for num, video_page_link in enumerate(link_file, start=1):
+			for video_page_link in link_file:
 				video_page_link = video_page_link.strip()
 				if not video_page_link or video_page_link == '' or video_page_link is None:
 					continue
@@ -64,7 +68,7 @@ if __name__ == "__main__":
 
 				print(video_info['title'], f": Downloading Video...")
 				video_stream = requests.get(video_info['video'], allow_redirects=True, stream=True, )
-				with open(f"{num:02}-{video_info['title']}.mp4", 'wb') as f:
+				with open(f"{video_info['filename']}.mp4", 'wb') as f:
 					for chunk in video_stream.iter_content(chunk_size=4096):
 						if chunk:  # filter out keep-alive new chunks
 							f.write(chunk)
@@ -75,9 +79,14 @@ if __name__ == "__main__":
 						print(video_info['title'], f": Downloading Subtitle...")
 						time.sleep(random.randint(1000, 4000))
 						subtitle = requests.get(video_info['subtitle'], allow_redirects=True, )
-						with open(f"{num:02}-{video_info['title']}.vtt", 'wb') as f:
+						with open(f"{video_info['filename']}.vtt", 'wb') as f:
 							f.write(subtitle.content)
 						print(video_info['title'], f": Subtitle Download Completed.")
 					except:
-						with open(f"{num:02}-{video_info['title']}.vtt", 'w') as f:
-							f.write(video_info['subtitle'])
+						with open(f"{video_info['filename']}.vtt", 'w') as f:
+							f.write(video_info['subtitle'] or 'No Subtitles')
+				else:
+					with open(f"sub-list.txt", 'a') as f:
+						f.write(f"{video_info['title']}\n")
+						f.write(video_info['subtitle'] or 'No Subtitles')
+						f.write("\n")
