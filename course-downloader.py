@@ -8,12 +8,14 @@ import time
 import requests
 
 video_link_regex = re.compile(r'https://player.vimeo.com/video/(?P<video_id>\d+)\?autoplay=1&app_id=(?P<app_id>\d+)')
-player_config_regex = re.compile(r'(?:config = )(\{.*(\n.*?)*\"\})')
+player_config_regex = re.compile(r'(?:playerConfig = )(\{.*(\n.*?)*\"\})')
 
 parser = argparse.ArgumentParser(description='Vue Mastery Downloader')
 parser.add_argument('-q', '--quality', default=1080, type=int, help='Video quality, default is 1080')
 parser.add_argument('-s', '--subtitle', action='store_true', help='download subtitles if available')
 parser.add_argument('-l', '--language', default='en', type=str, help='Subtitle language code, default is en')
+parser.add_argument('-f', '--filepath', default='data.txt', type=str, help='Subtitle filepath default to actual dir '
+																		   'data.txt file')
 
 
 def get_video_info(url, quality=1080, language='en'):
@@ -57,8 +59,10 @@ def get_video_info(url, quality=1080, language='en'):
 
 if __name__ == "__main__":
 	args = parser.parse_args()
-	if os.path.isfile('data.txt'):
-		with open('data.txt') as link_file:
+	filepath = args.filepath
+	file_dir = os.path.dirname(filepath) if len(filepath) > 0 else '.'
+	if os.path.isfile(filepath):
+		with open(filepath) as link_file:
 			for video_page_link in link_file:
 				video_page_link = video_page_link.strip()
 				if not video_page_link or video_page_link == '' or video_page_link is None:
@@ -68,7 +72,7 @@ if __name__ == "__main__":
 
 				print(video_info['title'], f": Downloading Video...")
 				video_stream = requests.get(video_info['video'], allow_redirects=True, stream=True, )
-				with open(f"{video_info['filename']}.mp4", 'wb') as f:
+				with open(f"{file_dir}/{video_info['filename']}.mp4", 'wb') as f:
 					for chunk in video_stream.iter_content(chunk_size=4096):
 						if chunk:  # filter out keep-alive new chunks
 							f.write(chunk)
@@ -79,14 +83,14 @@ if __name__ == "__main__":
 						print(video_info['title'], f": Downloading Subtitle...")
 						time.sleep(random.randint(1000, 4000))
 						subtitle = requests.get(video_info['subtitle'], allow_redirects=True, )
-						with open(f"{video_info['filename']}.vtt", 'wb') as f:
+						with open(f"{file_dir}/{video_info['filename']}.vtt", 'wb') as f:
 							f.write(subtitle.content)
 						print(video_info['title'], f": Subtitle Download Completed.")
 					except:
 						with open(f"{video_info['filename']}.vtt", 'w') as f:
 							f.write(video_info['subtitle'] or 'No Subtitles')
 				else:
-					with open(f"sub-list.txt", 'a') as f:
+					with open(f"{file_dir}/sub-list.txt", 'a') as f:
 						f.write(f"{video_info['title']}\n")
 						f.write(video_info['subtitle'] or 'No Subtitles')
 						f.write("\n")

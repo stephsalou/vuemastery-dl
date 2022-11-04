@@ -18,6 +18,10 @@
 * [View on VueMastery.com](https://vuemastery.com/courses/intro-to-vue-3)
 * [Readme](./data/intro-to-vue-3/Readme.md)
 
+# Component Pesign Patterns
+* [View on VueMastery.com](https://vuemastery.com/courses/component-pesign-patterns)
+* [Readme](./data/component-pesign-patterns/Readme.md)
+
 # Mastering Vuex
 * [View on VueMastery.com](https://vuemastery.com/courses/mastering-vuex)
 * [Readme](./data/mastering-vuex/Readme.md)
@@ -33,6 +37,10 @@
 # Token Based Authentication
 * [View on VueMastery.com](https://vuemastery.com/courses/token-based-authentication)
 * [Readme](./data/token-based-authentication/Readme.md)
+
+# Vuex Fundamentals
+* [View on VueMastery.com](https://vuemastery.com/courses/vuex-fundamentals)
+* [Readme](./data/vuex-fundamentals/Readme.md)
 
 # Vue3 Forms
 * [View on VueMastery.com](https://vuemastery.com/courses/vue3-forms)
@@ -78,17 +86,13 @@
 * [View on VueMastery.com](https://vuemastery.com/courses/next-level-vue)
 * [Readme](./data/next-level-vue/Readme.md)
 
-# Vue 3 Essentials
-* [View on VueMastery.com](https://vuemastery.com/courses/vue-3-essentials)
-* [Readme](./data/vue-3-essentials/Readme.md)
-
-# Component Design Patterns
-* [View on VueMastery.com](https://vuemastery.com/courses/component-design-Patterns)
-* [Readme](./data/component-design-Patterns/Readme.md)
-
 # Build A Gmail Clone With Vue3
 * [View on VueMastery.com](https://vuemastery.com/courses/build-a-gmail-clone-with-vue3)
 * [Readme](./data/build-a-gmail-clone-with-vue3/Readme.md)
+
+# Vue Router
+* [View on VueMastery.com](https://vuemastery.com/courses/vue-router)
+* [Readme](./data/vue-router/Readme.md)
 
 # Beautify With Vuetify
 * [View on VueMastery.com](https://vuemastery.com/courses/beautify-with-vuetify)
